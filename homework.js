@@ -70,17 +70,27 @@ function getData(profile) {
     image: '.swipe-wrap div img@src'
   }]
 
-  return new Promise(function(resolve, reject) {
-    request(queryString)
-      .then(function (body) {
-        var select = Select(body);
-        var arr = select(spec);
-        console.log(arr);
-      })
-      .catch(function (err) {
-        console.log(arr);
-      });
-  });
+  request(queryString)
+    .then(function (body) {
+      var select = Select(body);
+      var arr = select(spec);
+      console.log(arr);
+    })
+    .catch(function (err) {
+      console.log(arr);
+    });
+
+  // return new Promise(function(resolve, reject) {
+  //   request(queryString)
+  //     .then(function (body) {
+  //       var select = Select(body);
+  //       var arr = select(spec);
+  //       console.log(arr);
+  //     })
+  //     .catch(function (err) {
+  //       console.log(arr);
+  //     });
+  // });
 
 
 }
